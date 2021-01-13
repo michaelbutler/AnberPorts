@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Description : Wolfenstein 3D
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Wolfenstein 3D ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/AnberPorts/raw/master/misc/wolfenstein3d.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o wolfenstein3d.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf wolfenstein3d.zip
+
+dialog --backtitle "System" --infobox "\nPlease copy game files to your ecwolf directory! ..." 6 55 > /dev/tty1
+sleep 5

@@ -1,0 +1,139 @@
+#!/bin/bash
+
+# Copyright (c) 2021
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public
+# License as published by the Free Software Foundation; either
+# version 2 of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public
+# License along with this program; if not, write to the
+# Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+# Boston, MA 02110-1301 USA
+#
+# Authored by: Kris Henriksen <krishenriksen.work@gmail.com>
+#
+# AnberPorts (Rockchip rk3326 ports)
+#
+export TERM=linux
+sudo chmod 666 /dev/tty1
+
+MultimediaMenu() {
+	cmd=(dialog --clear --backtitle "AnberPorts" --title "[ Multimedia ]" --menu "Select application from the list:" "15" "56" "15")
+
+	options=(
+		Back "Back to main menu"
+		Kodi "Free and open-source media player software"
+	)
+
+    choices=$("${cmd[@]}" "${options[@]}" 2>&1 > /dev/tty1)
+   	bash ./scripts/multimedia/${choices[0]}
+}
+
+GamesMenu() {
+	cmd=(dialog --clear --backtitle "AnberPorts" --title "[ Games ]" --menu "Select game from the list:" "15" "56" "15")
+
+	options=(
+		Back "Back to main menu"
+		Half-Life "Gordon Freeman must exit Black Mesa"
+		Shadow-Warrior "Shadow Warrior is shooter video game"
+		Quake1 "ID Software's Quake saga"
+		Quake2 "ID Software's Quake saga"
+		Quake3 "ID Software's Quake saga"
+		Eduke32 "Duke Nukem 3D is a fps game"
+		Moonlight-Embedded "Gamestream client for embedded systems"
+		Flashback "The Quest for Identity - Delphine Software"
+		OpenBOR "Royalty free sprite based side scrolling gaming engine"
+		CannonBall "The Enhanced OutRun Engine"
+		Cave-Story "2004 Metroidvania platform-adventure game"
+		Diablo1 "Beneath the town of Tristram, the player journeys"
+		Doom1 "1993 first-person shooter game developed by id Software"
+		Doom2 "First-person shooter game by id Software"
+		Keen "Series of side-scrolling platform video games"
+		Rick-Dangerous "Platform game developed by Core Design"
+		Wolfenstein-3D "First-person shooter video game developed by id Software"
+		Blood "First-person shooter video game"
+		Exhumed "First-person shooter"
+		NAM "NAM, sold under the name Napalm, first-person shooter video game"
+		Redneck-Rampage "1997 first-person shooter game"
+		Redneck-Rampage-Rides-Again "Redneck Rampage Rides Again is a video game developed by Xatrix Entertainment"
+		World-War-II-GI "first-person shooter video game set during the events of World War II"
+	)
+
+    choices=$("${cmd[@]}" "${options[@]}" 2>&1 > /dev/tty1)
+   	bash ./scripts/games/${choices[0]}
+}
+
+ExitMenu() {
+	pgrep -f oga_controls.py | sudo xargs kill -9
+	sudo systemctl restart emulationstation
+}
+
+UpdateMenu() {
+	source ./scripts/helper
+
+	dialog --backtitle "System" --infobox "\nDownloading latest release of AnberPorts ..." 5 55 > /dev/tty1
+	wget -q 'https://github.com/krishenriksen/AnberPorts/releases/download/1.0.0/AnberPorts.zip'
+
+	dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+	unzip -qq -o AnberPorts.zip -d ../
+
+	dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+	rm -rf AnberPorts.zip
+
+	dialog --backtitle "System" --infobox "\nPlease launch AnberPorts again and enjoy ..." 5 55 > /dev/tty1
+	sleep 5
+
+	ExitMenu
+}
+
+source ./scripts/helper
+
+#
+# Joystick controls
+#
+if python3 -c "import uinput" &> /dev/null; then
+	sudo python3 oga_controls.py | tee -a /tmp/AnberPorts.log &
+else
+	dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
+	unzip -qq -o dependencies.zip -d ~/
+	cd ~/dependencies/python-uinput
+	python3 setup.py build && sudo python3 setup.py install
+	rm -rf ~/dependencies
+
+	dialog --backtitle "System" --infobox "\nPlease launch AnberPorts again and enjoy ..." 5 55 > /dev/tty1
+	sleep 5
+
+	ExitMenu
+fi
+
+#
+# Main menu
+#
+while true; do
+	cmd=(dialog --clear --backtitle "AnberPorts" --title " [ Main Menu ] " --menu "You can use UP/DOWN on the D-pad and A to select:" "10" "60" "10")
+
+	options=(
+		Games "Install or compile games easily"
+		Multimedia "Install or compile multimedia easily"
+		Update "Maybe there is something new"
+		Exit "Exit to emulationstation"
+	)
+
+	choices=$("${cmd[@]}" "${options[@]}" 2>&1 > /dev/tty1)
+
+	for choice in $choices; do
+		case $choice in
+			Games) GamesMenu ;;
+			Multimedia) MultimediaMenu ;;
+			Update) UpdateMenu ;;
+			Exit) ExitMenu ;;
+		esac
+	done
+done

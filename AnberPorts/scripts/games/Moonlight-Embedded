@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Description : moonlight-embedded
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Moonlight-Embedded ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/moonlight-embedded-rg351p/releases/download/1.0.0/moonlight-embedded.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o moonlight-embedded.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf moonlight-embedded.zip
+
+dialog --backtitle "System" --infobox "\nPlease edit 'Moonlight Embedded.sh' and set your computer ip address! ..." 6 55 > /dev/tty1
+sleep 5

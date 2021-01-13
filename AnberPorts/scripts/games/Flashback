@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Description : flashback
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Flashback ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/REminiscence-rg351p/releases/download/1.0.0/flashback.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o flashback.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf flashback.zip
+
+dialog --backtitle "System" --infobox "\nEnjoy Flashback! ..." 6 55 > /dev/tty1
+sleep 5

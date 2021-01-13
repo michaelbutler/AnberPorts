@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Description : Diablo 1
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Diablo 1 ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/AnberPorts/raw/master/misc/diablo1.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o diablo1.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf diablo1.zip
+
+dialog --backtitle "System" --infobox "\nPlease copy 'diabdat.mpq' to your diablo1 directory! ..." 6 55 > /dev/tty1
+sleep 5

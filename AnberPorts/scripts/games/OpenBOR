@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Description : OpenBOR
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading OpenBOR ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/OpenBOR-rg351p/releases/download/1.0.0/openbor.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o openbor.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf openbor.zip
+
+dialog --backtitle "System" --infobox "\nPlease add game files to your OpenBOR/Paks directory! ..." 6 55 > /dev/tty1
+sleep 5

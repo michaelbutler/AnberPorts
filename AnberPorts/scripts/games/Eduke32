@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# Description : eduke32
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Eduke32 ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/eduke32-rg351p/releases/download/1.0.0/eduke32.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o eduke32.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf eduke32.zip
+
+mkdir -p ~/.config/eduke32
+cp -rf ../eduke32.cfg ~/.config/eduke32/
+rm -rf ../eduke32.cfg
+
+dialog --backtitle "System" --infobox "\nPlease copy 'DUKE3D.GRP' to your eduke32 directory! ..." 6 55 > /dev/tty1
+sleep 5

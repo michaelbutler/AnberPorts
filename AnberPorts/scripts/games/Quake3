@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Description : quake3
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Quake 3 ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/q3lite-rg351p/releases/download/1.0.0/quake3.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o quake3.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf quake3.zip
+
+dialog --backtitle "System" --infobox "\nPlease copy '*.pk3' to your quake3/baseq3 directory! ..." 6 55 > /dev/tty1
+sleep 5

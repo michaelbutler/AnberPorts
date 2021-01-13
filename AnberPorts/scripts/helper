@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# Description : helper
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+# system dependencies
+if ! dpkg -s "dialog" >/dev/null 2>&1; then
+	whiptail --backtitle "System" --infobox "Installing dependencies ..." 7 55 > /dev/tty1
+	sudo apt update && sudo apt install -y "dialog"
+fi
+
+dialog --backtitle "System" --infobox "\nPlease wait ..." 5 55 > /dev/tty1
+
+if ! dpkg -s "unzip" >/dev/null 2>&1; then
+	dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
+	sudo apt install -y "unzip"
+fi
+
+if ! dpkg -s "wget" >/dev/null 2>&1; then
+	dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
+	sudo apt install -y "wget"
+fi

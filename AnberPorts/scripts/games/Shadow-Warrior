@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Description : shadow warrior
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Shadow Warrior ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/jfsw-rg351p/releases/download/1.0.0/shadow-warrior.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o shadow-warrior.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf shadow-warrior.zip
+
+mkdir -p ~/.jfsw
+mv ../sw.cfg ~/.jfsw/
+
+dialog --backtitle "System" --infobox "\nPlease copy game files to your ShadowWarrior directory! ..." 6 55 > /dev/tty1
+sleep 5

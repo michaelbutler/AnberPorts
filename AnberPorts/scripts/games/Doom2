@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Description : Doom 2
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Doom 2 ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/AnberPorts/raw/master/misc/doom2.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o doom2.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf doom2.zip
+
+dialog --backtitle "System" --infobox "\nPlease copy 'Doom2.wad' to your doom2 directory! ..." 6 55 > /dev/tty1
+sleep 5

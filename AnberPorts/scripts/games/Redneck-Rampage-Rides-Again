@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Redneck Rampage Rides Again ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/AnberPorts/raw/master/misc/redneck-rampage-rides-again.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o redneck-rampage-rides-again.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf redneck-rampage-rides-again.zip
+
+mkdir -p ~/.config/rednukem
+mv "../Redneck Rampage Rides Again/rednukem.cfg" ~/.config/rednukem/
+mv "../Redneck Rampage Rides Again/settings.cfg" ~/.config/rednukem/
+
+dialog --backtitle "System" --infobox "\nPlease copy game files to your Redneck Rampage Rides Again directory! ..." 6 55 > /dev/tty1
+sleep 5
