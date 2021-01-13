@@ -1,8 +1,5 @@
-# AnberPorts Keyboard/Mouse
-Emulated keyboard for Anbernic rg351p / rg351m
-
-# Howto
-Launch with `sudo ./oga_controls` or add current user to uinput via udev rule.
+# AnberPorts Keyboard
+Emulated keyboard for Anbernic rg351p / rg351m specific for AnberPorts menu.
 
 ## Support the project
 
