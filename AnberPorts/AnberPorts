@@ -71,7 +71,7 @@ GamesMenu() {
 }
 
 ExitMenu() {
-	pgrep -f oga_controls.py | sudo xargs kill -9
+	pgrep -f oga_controls | sudo xargs kill -9
 	sudo systemctl restart emulationstation
 }
 
@@ -98,20 +98,7 @@ source ./scripts/helper
 #
 # Joystick controls
 #
-if python3 -c "import uinput" &> /dev/null; then
-	sudo python3 oga_controls.py | tee -a /tmp/AnberPorts.log &
-else
-	dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
-	unzip -qq -o dependencies.zip -d ~/
-	cd ~/dependencies/python-uinput
-	python3 setup.py build && sudo python3 setup.py install
-	rm -rf ~/dependencies
-
-	dialog --backtitle "System" --infobox "\nPlease launch AnberPorts again and enjoy ..." 5 55 > /dev/tty1
-	sleep 5
-
-	ExitMenu
-fi
+sudo ./AnberPorts-Keyboard-Mouse/oga_controls | tee -a /tmp/AnberPorts.log &
 
 #
 # Main menu
