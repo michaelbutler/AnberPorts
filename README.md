@@ -1,6 +1,8 @@
 # AnberPorts
 Collection of pre-compiled applications and games, made specifically for the Anbernic rg351p / rg351m by yours truly.
 
+![AnberPorts Logo](logo_AnberPorts_header.png)
+
 ## Installation
 
 If using [ArkOS](https://github.com/christianhaitian/arkos) extract and upload the zip file content to your EASYROMS / ports directory.
