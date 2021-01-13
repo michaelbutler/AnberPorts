@@ -98,7 +98,7 @@ source ./scripts/helper
 #
 # Joystick controls
 #
-sudo ./AnberPorts-Keyboard-Mouse/oga_controls | tee -a /tmp/AnberPorts.log &
+sudo ./oga_controls &
 
 #
 # Main menu
