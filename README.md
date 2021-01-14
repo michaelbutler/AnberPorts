@@ -3,11 +3,7 @@ Collection of pre-compiled applications and games, made specifically for the Anb
 
 ![AnberPorts Logo](logo_AnberPorts_header.png)
 
-## Download
-
 [![](download.png)](https://github.com/krishenriksen/AnberPorts/releases/download/1.0.0/AnberPorts.zip)
-
-<a class="github-button" href="https://github.com/krishenriksen/AnberPorts/archive/master.zip" data-icon="octicon-download" data-size="large" aria-label="Download krishenriksen/AnberPorts on GitHub">Download</a>
 
 ## Installation
 
