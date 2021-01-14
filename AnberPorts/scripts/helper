@@ -13,11 +13,16 @@ fi
 dialog --backtitle "System" --infobox "\nPlease wait ..." 5 55 > /dev/tty1
 
 if ! dpkg -s "unzip" >/dev/null 2>&1; then
-	dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
+	dialog --backtitle "System" --infobox "\nInstalling dependencies unzip ..." 5 55 > /dev/tty1
 	sudo apt install -y "unzip"
 fi
 
 if ! dpkg -s "wget" >/dev/null 2>&1; then
-	dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
+	dialog --backtitle "System" --infobox "\nInstalling dependencies wget ..." 5 55 > /dev/tty1
 	sudo apt install -y "wget"
+fi
+
+if ! dpkg -s "libevdev2" >/dev/null 2>&1; then
+	dialog --backtitle "System" --infobox "\nInstalling dependencies libevdev2 ..." 5 55 > /dev/tty1
+	sudo apt install -y "libevdev2"
 fi
