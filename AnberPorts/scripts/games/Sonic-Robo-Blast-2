@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+# Compiler    : sauce (aka gameblabla)
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Sonic Robo Blast 2 ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/AnberPorts/raw/master/misc/sonic-robo-blast-2.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o sonic-robo-blast-2.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf sonic-robo-blast-2.zip
+
+dialog --backtitle "System" --infobox "\nPlease copy games files to your Sonic Robo Blast 2 directory! ..." 6 55 > /dev/tty1
+sleep 5
