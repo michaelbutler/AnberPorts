@@ -15,5 +15,5 @@ unzip -qq -o moonlight-embedded.zip -d ../
 dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
 rm -rf moonlight-embedded.zip
 
-dialog --backtitle "System" --infobox "\nPlease edit 'Moonlight Embedded.sh' and set your computer ip address! ..." 6 55 > /dev/tty1
+dialog --backtitle "System" --infobox "\nEnjoy! ..." 6 55 > /dev/tty1
 sleep 5
