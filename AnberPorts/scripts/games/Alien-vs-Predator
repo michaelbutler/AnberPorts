@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Alien vs. Predator ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/AnberPorts/raw/master/misc/avp.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o avp.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf avp.zip
+
+dialog --backtitle "System" --infobox "\nPlease copy games files to your Alien vs. Predator directory! ..." 6 55 > /dev/tty1
+sleep 5

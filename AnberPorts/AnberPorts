@@ -65,6 +65,7 @@ GamesMenu() {
 		Redneck-Rampage-Rides-Again "Redneck Rampage Rides Again is a video game developed by Xatrix Entertainment"
 		World-War-II-GI "first-person shooter video game set during the events of World War II"
 		Sonic-Robo-Blast-2 "Fan-made, free Sonic-themed game using a modified version of the Doom engine"
+		Alien-vs-Predator "2010 first-person shooter video game"
 	)
 
     choices=$("${cmd[@]}" "${options[@]}" 2>&1 > /dev/tty1)
