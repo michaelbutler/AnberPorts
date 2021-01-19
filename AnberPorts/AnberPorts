@@ -67,6 +67,7 @@ GamesMenu() {
 		Sonic-Robo-Blast-2 "Fan-made, free Sonic-themed game using a modified version of the Doom engine"
 		Alien-vs-Predator "2010 first-person shooter video game"
 		Prince-of-Persia "Video game franchise created by Jordan Mechner"
+		The-Ur-Quan-Masters "The Ur-Quan Masters is the sequel to Star Control"
 	)
 
     choices=$("${cmd[@]}" "${options[@]}" 2>&1 > /dev/tty1)
