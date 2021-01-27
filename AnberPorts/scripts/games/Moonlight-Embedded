@@ -15,11 +15,5 @@ unzip -qq -o moonlight-embedded.zip -d ../
 dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
 rm -rf moonlight-embedded.zip
 
-dialog --backtitle "System" --infobox "\nAdjusting system ..." 5 55 > /dev/tty1
-sudo chown root:video /dev/vpu_service
-sudo chmod 660 /dev/vpu_service
-sudo chown root:video /dev/hevc_service
-sudo chmod 660 /dev/hevc_service
-
 dialog --backtitle "System" --infobox "\nEnjoy! ..." 6 55 > /dev/tty1
 sleep 5
