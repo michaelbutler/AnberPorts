@@ -15,19 +15,20 @@ then
   sudo sh -c 'echo "WAYLAND_DISPLAY=/run/user/1002/wayland-0" >> /etc/environment'
 fi
 
-dialog --backtitle "System" --infobox "\nDownloading Nvidia GeForce NOW (Might take a while) ..." 5 55 > /dev/tty1
-wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/nvidia-geforce-now.zip'
+dialog --backtitle "System" --infobox "\nDownloading Nvidia GeForce NOW ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/Nvidia.GeForce.NOW.sh'
+wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/weston.zip'
 
 dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
-unzip -qq -o nvidia-geforce-now.zip -d ../
-unzip -qq -o ../weston.zip -d ../
+unzip -qq -o weston.zip -d ../
 
 cp ../weston/weston.ini ~/.config/
 cp -r ../weston/chromium/chrome ~/
 
+mv Nvidia.GeForce.NOW.sh ../Nvidia\ GeForce\ NOW.sh
+
 dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
-rm -rf nvidia-geforce-now.zip
-rm -rf ../weston.zip
+rm -rf weston.zip
 
 dialog --backtitle "System" --infobox "\nEnjoy! ..." 6 55 > /dev/tty1
 sleep 5
