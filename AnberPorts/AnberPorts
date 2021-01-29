@@ -24,6 +24,21 @@
 export TERM=linux
 sudo chmod 666 /dev/tty1
 
+StreamingMenu() {
+	cmd=(dialog --clear --backtitle "AnberPorts" --title "[ Streaming ]" --menu "Select application from the list:" "15" "56" "15")
+
+	options=(
+		Back "Back to main menu"
+		Moonlight-Embedded "Gamestream client for embedded systems"
+		Nvidia-GeForce-NOW "BETA: GeForce NOW is the brand used by Nvidia for its cloud gaming service"
+		Google-Stadia "BETA: Stadia is a cloud gaming service developed and operated by Google"
+		Amazon-Luna "BETA: Amazon Luna is a cloud gaming platform developed and operated by Amazon"
+	)
+
+    choices=$("${cmd[@]}" "${options[@]}" 2>&1 > /dev/tty1)
+   	bash ./scripts/streaming/${choices[0]}
+}
+
 MultimediaMenu() {
 	cmd=(dialog --clear --backtitle "AnberPorts" --title "[ Multimedia ]" --menu "Select application from the list:" "15" "56" "15")
 
@@ -47,7 +62,6 @@ GamesMenu() {
 		Quake2 "ID Software's Quake saga"
 		Quake3 "ID Software's Quake saga"
 		Eduke32 "Duke Nukem 3D is a fps game"
-		Moonlight-Embedded "Gamestream client for embedded systems"
 		Flashback "The Quest for Identity - Delphine Software"
 		OpenBOR "Royalty free sprite based side scrolling gaming engine"
 		CannonBall "The Enhanced OutRun Engine"
@@ -111,8 +125,9 @@ while true; do
 	cmd=(dialog --clear --backtitle "AnberPorts" --title " [ Main Menu ] " --menu "You can use UP/DOWN on the D-pad and A to select:" "10" "60" "10")
 
 	options=(
-		Games "Install or compile games easily"
-		Multimedia "Install or compile multimedia easily"
+		Games "Install game ports"
+		Multimedia "Install multimedia apps"
+		Streaming "Install game streaming"
 		Update "Maybe there is something new"
 		Exit "Exit to emulationstation"
 	)
@@ -123,6 +138,7 @@ while true; do
 		case $choice in
 			Games) GamesMenu ;;
 			Multimedia) MultimediaMenu ;;
+			Streaming) StreamingMenu ;;
 			Update) UpdateMenu ;;
 			Exit) ExitMenu ;;
 		esac
