@@ -6,7 +6,7 @@
 source ./scripts/helper
 
 dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
-sudo apt update && sudo apt install -y weston wayland-protocols
+sudo apt update && sudo apt install -y weston wayland-protocols libevent-2.1-6 libwebpdemux2 xwayland
 
 if ! grep "WAYLAND_DISPLAY" /etc/environment > /dev/null
 then
@@ -23,6 +23,7 @@ unzip -qq -o google-stadia.zip -d ../
 unzip -qq -o ../weston.zip -d ../
 
 cp ../weston/weston.ini ~/.config/
+cp -r ../weston/chromium/chrome ~/
 
 dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
 rm -rf google-stadia.zip
