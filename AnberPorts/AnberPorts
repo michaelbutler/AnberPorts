@@ -122,7 +122,7 @@ sudo ./oga_controls &
 # Main menu
 #
 while true; do
-	cmd=(dialog --clear --backtitle "AnberPorts" --title " [ Main Menu ] " --menu "You can use UP/DOWN on the D-pad and A to select:" "10" "60" "10")
+	cmd=(dialog --clear --backtitle "AnberPorts" --title " [ Main Menu ] " --menu "You can use UP/DOWN on the D-pad and A to select:" "15" "56" "15")
 
 	options=(
 		Games "Install game ports"
