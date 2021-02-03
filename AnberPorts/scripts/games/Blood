@@ -16,6 +16,7 @@ rm -rf blood.zip
 
 mkdir -p ~/.config/nblood
 mv ../Blood/nblood.cfg ~/.config/nblood/
+mv ../Blood/settings.cfg ~/.config/nblood/
 
 dialog --backtitle "System" --infobox "\nPlease copy games files to your Blood directory! ..." 6 55 > /dev/tty1
 sleep 5
