@@ -16,7 +16,7 @@ then
 fi
 
 dialog --backtitle "System" --infobox "\nDownloading Google Stadia ..." 5 55 > /dev/tty1
-wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/Amazon.Luna.sh'
+wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/Google.Stadia.sh'
 wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/weston.zip'
 
 dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
@@ -25,7 +25,7 @@ unzip -qq -o weston.zip -d ../
 cp ../weston/weston.ini ~/.config/
 cp -r ../weston/chromium/chrome ~/
 
-mv Amazon.Luna.sh ../Amazon\ Luna.sh
+mv Google.Stadia.sh ../Google\ Stadia.sh
 
 dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
 rm -rf weston.zip
