@@ -9,7 +9,7 @@ Collection of pre-compiled applications and games, made specifically for the Anb
 
 If using [ArkOS](https://github.com/christianhaitian/arkos) extract and upload the zip file content to your EASYROMS / ports directory.
 
-Written guide kindly provided by [Retro Game Corps]https://retrogamecorps.com/2021/02/10/anberports-for-rg351-devices-diablo-ii-moonlight-stadia-and-more/
+Written guide kindly provided by [Retro Game Corps](https://retrogamecorps.com/2021/02/10/anberports-for-rg351-devices-diablo-ii-moonlight-stadia-and-more/)
 
 # Logs
 Please provide log.txt from the port directory, if something goes wrong in starting any of the ports.
