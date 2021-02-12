@@ -31,4 +31,4 @@ Or
 
 ## 💰 Total amount of coffee in dollars by awesome users
 
-- $35,00
+- $55,00
