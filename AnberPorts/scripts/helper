@@ -6,6 +6,17 @@
 
 sudo sh -c 'printf "\033c" > /dev/tty1'
 
+#
+# Check connectivity
+#
+GW=`ip route | awk '/default/ { print $3 }'`
+if [ ! -z "$GW" ]; then
+	sudo sh -c 'echo "Your network connection does not seem to be working.\nDid you make sure to configure your wifi connection\nusing the Wifi selection in the Options menu?" > /dev/tty1'
+	sleep 10
+
+	ExitMenu
+fi
+
 if ! dpkg -s "dialog" >/dev/null 2>&1; then
 	sudo sh -c 'echo "Installing dependency dialog ..." > /dev/tty1'
 	sudo apt update && sudo apt install -y dialog
