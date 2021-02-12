@@ -97,7 +97,7 @@ UpdateMenu() {
 	source ./scripts/helper
 
 	dialog --backtitle "System" --infobox "\nDownloading latest release of AnberPorts ..." 5 55 > /dev/tty1
-	wget -q 'https://github.com/krishenriksen/AnberPorts/releases/download/1.0.0/AnberPorts.zip'
+	curl -s https://api.github.com/repos/krishenriksen/AnberPorts/releases/latest | grep browser_download_url | cut -d '"' -f 4 | wget -qi -
 
 	dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
 	unzip -qq -o AnberPorts.zip -d ../
@@ -119,10 +119,15 @@ source ./scripts/helper
 sudo ./oga_controls &
 
 #
+# Version management
+#
+version=1.0.1
+
+#
 # Main menu
 #
 while true; do
-	cmd=(dialog --clear --backtitle "AnberPorts" --title " [ Main Menu ] " --menu "You can use UP/DOWN on the D-pad and A to select:" "15" "56" "15")
+	cmd=(dialog --clear --backtitle "AnberPorts $version" --title " [ Main Menu ] " --menu "You can use UP/DOWN on the D-pad and A to select:" "15" "56" "15")
 
 	options=(
 		Games "Install game ports"
