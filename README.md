@@ -16,8 +16,10 @@ Please provide log.txt from the port directory, if something goes wrong in start
 
 If EmulationStation does not start after running Diablo 2, Google Stadia, Nvidia GeForce Now or Amazon Luna, run these two commands using SSH
 
-`sudo ln -sf /usr/local/lib/aarch64-linux-gnu/libgbm.so.1.0.0 /usr/local/lib/aarch64-linux-gnu/libgbm.so.1`
-`sudo ln -sf /usr/local/lib/aarch64-linux-gnu/libEGL.so.1.0.0 /usr/local/lib/aarch64-linux-gnu/libEGL.so.1`
+```
+sudo ln -sf /usr/local/lib/aarch64-linux-gnu/libgbm.so.1.0.0 /usr/local/lib/aarch64-linux-gnu/libgbm.so.1
+sudo ln -sf /usr/local/lib/aarch64-linux-gnu/libEGL.so.1.0.0 /usr/local/lib/aarch64-linux-gnu/libEGL.so.1
+```
 
 # Up to date list
 
