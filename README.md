@@ -14,6 +14,11 @@ Written guide kindly provided by [Retro Game Corps](https://retrogamecorps.com/2
 # Logs
 Please provide log.txt from the port directory, if something goes wrong in starting any of the ports.
 
+If EmulationStation does not start after running Diablo 2, Google Stadia, Nvidia GeForce Now or Amazon Luna, run these two commands using SSH
+
+`sudo ln -sf /usr/local/lib/aarch64-linux-gnu/libgbm.so.1.0.0 /usr/local/lib/aarch64-linux-gnu/libgbm.so.1
+sudo ln -sf /usr/local/lib/aarch64-linux-gnu/libEGL.so.1.0.0 /usr/local/lib/aarch64-linux-gnu/libEGL.so.1`
+
 # Up to date list
 
 [Games](https://github.com/krishenriksen/AnberPorts/tree/master/AnberPorts/scripts/games)
