@@ -5,7 +5,7 @@
 
 source ./scripts/helper
 
-dialog --backtitle "System" --infobox "\nDownloading Half-Life ..." 5 55 > /dev/tty1
+dialog --backtitle "System" --infobox "\nDownloading Counter-Strike ..." 5 55 > /dev/tty1
 wget -q 'https://github.com/krishenriksen/Half-Life-rg351p/releases/download/1.0.0/Half-Life.zip'
 
 dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
@@ -14,8 +14,8 @@ unzip -qq -o Half-Life.zip -d ../
 dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
 rm -rf Half-Life.zip
 
-dialog --backtitle "System" --infobox "\nPlease copy 'valve' folder to your Half-Life directory! ..." 6 55 > /dev/tty1
+dialog --backtitle "System" --infobox "\nPlease copy 'cstrike' folder to your Half-Life directory! ..." 6 55 > /dev/tty1
 sleep 5
 
-dialog --backtitle "System" --infobox "\nExtract 'Copy Contents into valve folder.zip' to your 'valve' folder ..." 6 55 > /dev/tty1
+dialog --backtitle "System" --infobox "\nExtract 'Copy Contents into cstrike folder.zip' to your 'cstrike' folder ..." 6 55 > /dev/tty1
 sleep 5

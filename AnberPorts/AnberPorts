@@ -57,6 +57,7 @@ GamesMenu() {
 	options=(
 		Back "Back to main menu"
 		Half-Life "Gordon Freeman must exit Black Mesa"
+		Counter-Strike "Multiplayer first-person shooter video game"
 		Shadow-Warrior "Shadow Warrior is shooter video game"
 		Quake1 "ID Software's Quake saga"
 		Quake2 "ID Software's Quake saga"
