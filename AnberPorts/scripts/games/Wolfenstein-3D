@@ -2,18 +2,19 @@
 #
 # Description : Wolfenstein 3D
 # Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+# Credits     : @tiduscrying#2432
 #
 
 source ./scripts/helper
 
 dialog --backtitle "System" --infobox "\nDownloading Wolfenstein 3D ..." 5 55 > /dev/tty1
-wget -q 'https://github.com/krishenriksen/AnberPorts/raw/master/misc/wolfenstein3d.zip'
+wget -q 'https://github.com/tiduscrying/ecwolf-rg351/releases/download/1.2/release.zip'
 
 dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
-unzip -qq -o wolfenstein3d.zip -d ../
+unzip -qq -o release.zip -d ../
 
 dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
-rm -rf wolfenstein3d.zip
+rm -rf release.zip
 
 dialog --backtitle "System" --infobox "\nPlease copy game files to your ecwolf directory! ..." 6 55 > /dev/tty1
 sleep 5
