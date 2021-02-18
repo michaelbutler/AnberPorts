@@ -19,25 +19,25 @@ fi
 
 if ! dpkg -s "dialog" >/dev/null 2>&1; then
 	sudo sh -c 'echo "Installing dependency dialog ..." > /dev/tty1'
-	sudo apt update && sudo apt install -y dialog
+	sudo apt update && sudo apt install -y dialog --no-install-recommends
 fi
 
 if ! dpkg -s "unzip" >/dev/null 2>&1; then
 	sudo sh -c 'echo "Installing dependency unzip ..." > /dev/tty1'
-	sudo apt update && sudo apt install -y unzip
+	sudo apt update && sudo apt install -y unzip --no-install-recommends
 fi
 
 if ! dpkg -s "curl" >/dev/null 2>&1; then
 	sudo sh -c 'echo "Installing dependency curl ..." > /dev/tty1'
-	sudo apt update && sudo apt install -y curl
+	sudo apt update && sudo apt install -y curl --no-install-recommends
 fi
 
 if ! dpkg -s "wget" >/dev/null 2>&1; then
 	sudo sh -c 'echo "Installing dependency wget ..." > /dev/tty1'
-	sudo apt update && sudo apt install -y wget
+	sudo apt update && sudo apt install -y wget --no-install-recommends
 fi
 
 if ! dpkg -s "libevdev2" >/dev/null 2>&1; then
 	sudo sh -c 'echo "Installing dependency libevdev2 ..." > /dev/tty1'
-	sudo apt update && sudo apt install -y libevdev2
+	sudo apt update && sudo apt install -y libevdev2 --no-install-recommends
 fi
