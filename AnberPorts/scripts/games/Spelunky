@@ -23,11 +23,11 @@ then
   sudo sh -c 'echo "LIBGL_NOTEST=1" >> /etc/environment'
 fi
 
-FILE="/etc/ld.so.conf.d/weston.conf"
-if [ ! -f $FILE ]; then
-	sudo sh -c "echo '/roms/ports/weston/lib' > $FILE"
-	sudo ldconfig -v
-fi
+#FILE="/etc/ld.so.conf.d/weston.conf"
+#if [ ! -f $FILE ]; then
+#	sudo sh -c "echo '/roms/ports/weston/lib' > $FILE"
+#	sudo ldconfig -v
+#fi
 
 dialog --backtitle "System" --infobox "\nDownloading Spelunky ..." 5 55 > /dev/tty1
 wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/weston.zip'
