@@ -84,6 +84,7 @@ GamesMenu() {
 		Prince-of-Persia "Video game franchise created by Jordan Mechner"
 		The-Ur-Quan-Masters "The Ur-Quan Masters is the sequel to Star Control"
 		The-Clue "1994 video game inspired by the 1986 game They Stole a Million"
+		Spelunky "Unique platformer with randomized levels that offer a challenging new experience"
 	)
 
     choices=$("${cmd[@]}" "${options[@]}" 2>&1 > /dev/tty1)
