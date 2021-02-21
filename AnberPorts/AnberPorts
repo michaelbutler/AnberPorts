@@ -124,7 +124,7 @@ sudo ./oga_controls &
 #
 # Version management
 #
-version=1.0.6
+version=1.0.7
 latest=`curl -s https://api.github.com/repos/krishenriksen/AnberPorts/releases/latest | grep tag_name | cut -d '"' -f 4`
 update="Using latest version"
 
