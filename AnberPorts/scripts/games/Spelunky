@@ -31,18 +31,18 @@ fi
 
 dialog --backtitle "System" --infobox "\nDownloading Spelunky ..." 5 55 > /dev/tty1
 wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/weston.zip'
-wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/Spelunky.sh'
+wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/Spelunky.zip'
 
 dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
 unzip -qq -o weston.zip -d ../
+unzip -qq -o Spelunky.zip -d ../
 
 cp ../weston/weston.ini ~/.config/
-cp -r ../weston/spelunky_classic_hd/SpelunkyClassicHD ~/.config/
-
-mv Spelunky.sh ../Spelunky.sh
+cp -r ../Spelunky/SpelunkyClassicHD ~/.config/
 
 dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
 rm -rf weston.zip
+rm -rf Spelunky.zip
 
 dialog --backtitle "System" --infobox "\nnEnjoy! ..." 6 55 > /dev/tty1
 sleep 5
