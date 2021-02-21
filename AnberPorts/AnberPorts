@@ -21,6 +21,8 @@
 #
 # AnberPorts (Rockchip rk3326 ports)
 #
+version=1.0.8
+
 export TERM=linux
 sudo chmod 666 /dev/tty1
 
@@ -85,6 +87,7 @@ GamesMenu() {
 		The-Ur-Quan-Masters "The Ur-Quan Masters is the sequel to Star Control"
 		The-Clue "1994 video game inspired by the 1986 game They Stole a Million"
 		Spelunky "Unique platformer with randomized levels that offer a challenging new experience"
+		AM2R "Action-adventure game developed by Argentinian programmer Milton Guasti"
 	)
 
     choices=$("${cmd[@]}" "${options[@]}" 2>&1 > /dev/tty1)
@@ -124,7 +127,6 @@ sudo ./oga_controls &
 #
 # Version management
 #
-version=1.0.7
 latest=`curl -s https://api.github.com/repos/krishenriksen/AnberPorts/releases/latest | grep tag_name | cut -d '"' -f 4`
 update="Using latest version"
 
