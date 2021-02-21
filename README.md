@@ -14,11 +14,10 @@ Written guide kindly provided by [Retro Game Corps](https://retrogamecorps.com/2
 # Logs
 Please provide log.txt from the port directory, if something goes wrong in starting any of the ports.
 
-If EmulationStation does not start after running Diablo 2, Google Stadia, Nvidia GeForce Now or Amazon Luna, run these two commands using SSH
+If EmulationStation does not start after running Diablo 2, Google Stadia, Nvidia GeForce Now, Amazon Luna or Spelunky, run this command using SSH
 
 ```
-sudo ln -sf /usr/local/lib/aarch64-linux-gnu/libgbm.so.1.0.0 /usr/local/lib/aarch64-linux-gnu/libgbm.so.1
-sudo ln -sf /usr/local/lib/aarch64-linux-gnu/libEGL.so.1.0.0 /usr/local/lib/aarch64-linux-gnu/libEGL.so.1
+/roms/ports/weston/weston reset
 ```
 
 # Up to date list
@@ -38,7 +37,3 @@ sudo ln -sf /usr/local/lib/aarch64-linux-gnu/libEGL.so.1.0.0 /usr/local/lib/aarc
 Or
 
 <a href="https://www.paypal.me/krishenriksendk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-## 💰 Total amount of coffee in dollars by awesome users
-
-- $55,00
