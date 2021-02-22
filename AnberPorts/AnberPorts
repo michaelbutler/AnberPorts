@@ -21,7 +21,7 @@
 #
 # AnberPorts (Rockchip rk3326 ports)
 #
-version=1.0.8
+version=1.0.9
 
 export TERM=linux
 sudo chmod 666 /dev/tty1

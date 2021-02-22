@@ -6,7 +6,7 @@
 source ./scripts/helper
 
 dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
-sudo apt update && sudo apt install -y weston wayland-protocols libevent-2.1-6 libwebpdemux2 xwayland
+sudo apt update && sudo apt install -y weston wayland-protocols
 
 if ! grep "WAYLAND_DISPLAY" /etc/environment > /dev/null
 then

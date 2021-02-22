@@ -6,7 +6,7 @@
 source ./scripts/helper
 
 dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
-sudo apt update && sudo apt install -y weston wayland-protocols libevent-2.1-6 libwebpdemux2 xwayland
+sudo apt update && sudo apt install -y weston wayland-protocols
 
 if ! grep "WAYLAND_DISPLAY" /etc/environment > /dev/null
 then
@@ -22,12 +22,6 @@ then
   sudo sh -c 'echo "LIBGL_GL=21" >> /etc/environment'
   sudo sh -c 'echo "LIBGL_NOTEST=1" >> /etc/environment'
 fi
-
-#FILE="/etc/ld.so.conf.d/weston.conf"
-#if [ ! -f $FILE ]; then
-#	sudo sh -c "echo '/roms/ports/weston/lib' > $FILE"
-#	sudo ldconfig -v
-#fi
 
 dialog --backtitle "System" --infobox "\nDownloading Diablo 2 ..." 5 55 > /dev/tty1
 wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/weston.zip'

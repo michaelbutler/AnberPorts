@@ -6,7 +6,7 @@
 source ./scripts/helper
 
 dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
-sudo apt update && sudo apt install -y weston wayland-protocols libevent-2.1-6 libwebpdemux2 xwayland
+sudo apt update && sudo apt install -y weston wayland-protocols
 
 if ! grep "WAYLAND_DISPLAY" /etc/environment > /dev/null
 then
@@ -23,24 +23,21 @@ then
   sudo sh -c 'echo "LIBGL_NOTEST=1" >> /etc/environment'
 fi
 
-#FILE="/etc/ld.so.conf.d/weston.conf"
-#if [ ! -f $FILE ]; then
-#	sudo sh -c "echo '/roms/ports/weston/lib' > $FILE"
-#	sudo ldconfig -v
-#fi
-
 dialog --backtitle "System" --infobox "\nDownloading Google Stadia ..." 5 55 > /dev/tty1
 wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/Google.Stadia.sh'
 wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/weston.zip'
+wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/chromium.zip'
 
 dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
 unzip -qq -o weston.zip -d ../
+unzip -qq -o chromium.zip -d ../
 
 cp ../weston/weston.ini ~/.config/
 mv Google.Stadia.sh ../Google\ Stadia.sh
 
 dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
 rm -rf weston.zip
+rm -rf chromium.zip
 
 dialog --backtitle "System" --infobox "\nEnjoy! ..." 6 55 > /dev/tty1
 sleep 5
