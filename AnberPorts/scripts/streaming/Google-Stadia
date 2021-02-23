@@ -6,7 +6,7 @@
 source ./scripts/helper
 
 dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
-sudo apt update && sudo apt install -y weston wayland-protocols
+sudo apt update && sudo apt install -y weston wayland-protocols xwayland
 
 if ! grep "WAYLAND_DISPLAY" /etc/environment > /dev/null
 then
