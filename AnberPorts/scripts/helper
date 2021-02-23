@@ -11,33 +11,33 @@ sudo sh -c 'printf "\033c" > /dev/tty1'
 #
 GW=`ip route | awk '/default/ { print $3 }'`
 if [ -z "$GW" ]; then
-	sudo sh -c 'echo "Your network connection does not seem to be working.\nDid you make sure to configure your wifi connection\nusing the Wifi selection in the Options menu?" > /dev/tty1'
-	sleep 10
+  sudo sh -c 'echo "Your network connection does not seem to be working.\nDid you make sure to configure your wifi connection\nusing the Wifi selection in the Options menu?" > /dev/tty1'
+  sleep 10
 
-	ExitMenu
+  ExitMenu
 fi
 
-if ! dpkg -s "dialog" >/dev/null 2>&1; then
-	sudo sh -c 'echo "Installing dependency dialog ..." > /dev/tty1'
-	sudo apt update && sudo apt install -y dialog --no-install-recommends
+if ! dpkg -s "dialog" &> /dev/null || ! dpkg -s "unzip" &> /dev/null || ! dpkg -s "wget" &> /dev/null || ! dpkg -s "libevdev2" &> /dev/null ; then
+  sudo apt update
 fi
 
-if ! dpkg -s "unzip" >/dev/null 2>&1; then
-	sudo sh -c 'echo "Installing dependency unzip ..." > /dev/tty1'
-	sudo apt update && sudo apt install -y unzip --no-install-recommends
+if ! dpkg -s "dialog" &> /dev/null ; then
+  install_dependencies="dialog"
 fi
 
-if ! dpkg -s "curl" >/dev/null 2>&1; then
-	sudo sh -c 'echo "Installing dependency curl ..." > /dev/tty1'
-	sudo apt update && sudo apt install -y curl --no-install-recommends
+if ! dpkg -s "unzip" &> /dev/null ; then
+  install_dependencies="$install_dependencies unzip"
 fi
 
-if ! dpkg -s "wget" >/dev/null 2>&1; then
-	sudo sh -c 'echo "Installing dependency wget ..." > /dev/tty1'
-	sudo apt update && sudo apt install -y wget --no-install-recommends
+if ! dpkg -s "wget" &> /dev/null ; then
+  install_dependencies="$install_dependencies wget"
 fi
 
-if ! dpkg -s "libevdev2" >/dev/null 2>&1; then
-	sudo sh -c 'echo "Installing dependency libevdev2 ..." > /dev/tty1'
-	sudo apt update && sudo apt install -y libevdev2 --no-install-recommends
+if ! dpkg -s "libevdev2" &> /dev/null ; then
+  install_dependencies="$install_dependencies libevdev2"
+fi
+
+if [ -z "$install_dependencies" ]; then
+  sudo sh -c 'echo "Installing dependencies ..." > /dev/tty1'
+  sudo apt install -y $install_dependencies --no-install-recommends
 fi

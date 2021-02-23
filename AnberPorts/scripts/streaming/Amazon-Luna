@@ -5,24 +5,6 @@
 
 source ./scripts/helper
 
-dialog --backtitle "System" --infobox "\nInstalling dependencies ..." 5 55 > /dev/tty1
-sudo apt update && sudo apt install -y weston wayland-protocols xwayland
-
-if ! grep "WAYLAND_DISPLAY" /etc/environment > /dev/null
-then
-  sudo sh -c 'echo "DISPLAY=:0" >> /etc/environment'
-  sudo sh -c 'echo "XDG_RUNTIME_DIR=/run/user/1002" >> /etc/environment'
-  sudo sh -c 'echo "WAYLAND_DISPLAY=/run/user/1002/wayland-0" >> /etc/environment'
-fi
-
-if ! grep "LIBGL_NOTEST" /etc/environment > /dev/null
-then
-  sudo sh -c 'echo "LIBGL_FB=0" >> /etc/environment'
-  sudo sh -c 'echo "LIBGL_ES=2" >> /etc/environment'
-  sudo sh -c 'echo "LIBGL_GL=21" >> /etc/environment'
-  sudo sh -c 'echo "LIBGL_NOTEST=1" >> /etc/environment'
-fi
-
 dialog --backtitle "System" --infobox "\nDownloading Amazon Luna ..." 5 55 > /dev/tty1
 wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/Amazon.Luna.sh'
 wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/weston.zip'
@@ -32,7 +14,6 @@ dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
 unzip -qq -o weston.zip -d ../
 unzip -qq -o chromium.zip -d ../
 
-cp ../weston/weston.ini ~/.config/
 mv Amazon.Luna.sh ../Amazon\ Luna.sh
 
 dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1

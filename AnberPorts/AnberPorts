@@ -1,27 +1,8 @@
 #!/bin/bash
-
-# Copyright (c) 2021
 #
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public
-# License as published by the Free Software Foundation; either
-# version 2 of the License, or (at your option) any later version.
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# General Public License for more details.
-#
-# You should have received a copy of the GNU General Public
-# License along with this program; if not, write to the
-# Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-# Boston, MA 02110-1301 USA
-#
-# Authored by: Kris Henriksen <krishenriksen.work@gmail.com>
-#
-# AnberPorts (Rockchip rk3326 ports)
-#
-version=1.0.9
+version=1.1.0
 
 export TERM=linux
 sudo chmod 666 /dev/tty1
@@ -127,7 +108,7 @@ sudo ./oga_controls &
 #
 # Version management
 #
-latest=`curl -s https://api.github.com/repos/krishenriksen/AnberPorts/releases/latest | grep tag_name | cut -d '"' -f 4`
+latest=`wget -qO- https://api.github.com/repos/krishenriksen/AnberPorts/releases/latest | grep tag_name | cut -d '"' -f 4`
 update="Using latest version"
 
 if [ $latest \> $version ]; then
