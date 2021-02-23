@@ -37,5 +37,5 @@ dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
 rm -rf weston.zip
 rm -rf am2r.zip
 
-dialog --backtitle "System" --infobox "\nnEnjoy! ..." 6 55 > /dev/tty1
+dialog --backtitle "System" --infobox "\nEnjoy! ..." 6 55 > /dev/tty1
 sleep 5
