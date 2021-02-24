@@ -71,8 +71,8 @@ void handle_event(int type, int code, int value) {
 			emit(EV_SYN, SYN_REPORT, 0);
 		}
 		else if (code == select && (value == 1 || value == 2)) {
-			emit(EV_KEY, KEY_ESC, 1);
-			emit(EV_SYN, SYN_REPORT, 0);
+			system("pgrep -f AnberPorts | sudo xargs kill -9");
+			exit(0);
 		}
 		else if (code == a && (value == 1 || value == 2)) {
 			emit(EV_KEY, KEY_ENTER, 1);

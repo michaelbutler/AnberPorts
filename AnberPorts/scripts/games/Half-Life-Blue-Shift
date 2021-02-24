@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# Author      : Kris Henriksen <krishenriksen.work@gmail.com>
+#
+
+source ./scripts/helper
+
+dialog --backtitle "System" --infobox "\nDownloading Half-Life: Blue Shift ..." 5 55 > /dev/tty1
+wget -q 'https://github.com/krishenriksen/Half-Life-rg351p/releases/download/1.0.0/Half-Life.zip'
+
+dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
+unzip -qq -o Half-Life.zip -d ../
+
+dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+rm -rf Half-Life.zip
+
+dialog --backtitle "System" --infobox "\nPlease copy 'bshift' folder to your Half-Life directory! ..." 6 55 > /dev/tty1
+sleep 5
+
+dialog --backtitle "System" --infobox "\nExtract 'Copy Contents into bshift folder.zip' to your 'bshift' folder ..." 6 55 > /dev/tty1
+sleep 5
