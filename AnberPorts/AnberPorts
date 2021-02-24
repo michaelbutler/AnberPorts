@@ -2,7 +2,7 @@
 #
 # Author      : Kris Henriksen <krishenriksen.work@gmail.com>
 #
-version=1.1.1
+version=1.1.2
 
 export TERM=linux
 sudo chmod 666 /dev/tty1

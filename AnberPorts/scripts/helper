@@ -38,3 +38,34 @@ then
   sudo sh -c 'echo "Installing dependencies ..." > /dev/tty1'
   sudo apt update && sudo apt install -y $install_dependencies --no-install-recommends
 fi
+
+# clear up
+if grep "XDG_RUNTIME_DIR" /etc/environment > /dev/null
+then
+  sudo sed -i '/XDG_RUNTIME_DIR=\/run\/user\/1002/d' /etc/environment
+fi
+
+if grep "WAYLAND_DISPLAY" /etc/environment > /dev/null
+then
+  sudo sed -i '/WAYLAND_DISPLAY=\/run\/user\/1002\/wayland-0/d' /etc/environment
+fi
+
+if grep "LIBGL_FB" /etc/environment > /dev/null
+then
+  sudo sed -i '/LIBGL_FB=0/d' /etc/environment
+fi
+
+if grep "LIBGL_ES" /etc/environment > /dev/null
+then
+  sudo sed -i '/LIBGL_ES=2/d' /etc/environment
+fi
+
+if grep "LIBGL_GL" /etc/environment > /dev/null
+then
+  sudo sed -i '/LIBGL_GL=21/d' /etc/environment
+fi
+
+if grep "LIBGL_NOTEST" /etc/environment > /dev/null
+then
+  sudo sed -i '/LIBGL_NOTEST=1/d' /etc/environment
+fi
