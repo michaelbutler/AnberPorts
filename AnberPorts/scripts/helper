@@ -17,10 +17,6 @@ if [ -z "$GW" ]; then
   ExitMenu
 fi
 
-if ! dpkg -s "dialog" &> /dev/null || ! dpkg -s "unzip" &> /dev/null || ! dpkg -s "wget" &> /dev/null || ! dpkg -s "libevdev2" &> /dev/null ; then
-  sudo apt update
-fi
-
 if ! dpkg -s "dialog" &> /dev/null ; then
   install_dependencies="dialog"
 fi
@@ -37,7 +33,8 @@ if ! dpkg -s "libevdev2" &> /dev/null ; then
   install_dependencies="$install_dependencies libevdev2"
 fi
 
-if [ -z "$install_dependencies" ]; then
+if [ ! -z "$install_dependencies" ]
+then
   sudo sh -c 'echo "Installing dependencies ..." > /dev/tty1'
-  sudo apt install -y $install_dependencies --no-install-recommends
+  sudo apt update && sudo apt install -y $install_dependencies --no-install-recommends
 fi
