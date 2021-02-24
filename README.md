@@ -15,11 +15,11 @@ Collection of pre-compiled applications and games, made specifically for the Anb
 
 Where should I devote my focus, you choose my dedication. [Boost It!](https://github.com/sponsors/krishenriksen)
 
-[![](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/GTA3)](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/GTA3/vote)
-[![](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Spelunky)](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Spelunky/vote)
-[![](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/AM2R)](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/AM2R/vote)
-[![](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Diablo%202)](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Diablo%202/vote)
-[![](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Other)](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Other/vote)
+[![](https://api.gh-polls.com/poll/01EZAS745MGVNE5NZT68GDXZ8B/Grand%20Theft%20Auto%20III)](https://api.gh-polls.com/poll/01EZAS745MGVNE5NZT68GDXZ8B/Grand%20Theft%20Auto%20III/vote)
+[![](https://api.gh-polls.com/poll/01EZAS745MGVNE5NZT68GDXZ8B/Grand%20Theft%20Auto%3A%20Vice%20City)](https://api.gh-polls.com/poll/01EZAS745MGVNE5NZT68GDXZ8B/Grand%20Theft%20Auto%3A%20Vice%20City/vote)
+[![](https://api.gh-polls.com/poll/01EZAS745MGVNE5NZT68GDXZ8B/Grand%20Theft%20Auto%3A%20San%20Andreas)](https://api.gh-polls.com/poll/01EZAS745MGVNE5NZT68GDXZ8B/Grand%20Theft%20Auto%3A%20San%20Andreas/vote)
+[![](https://api.gh-polls.com/poll/01EZAS745MGVNE5NZT68GDXZ8B/Diablo%202)](https://api.gh-polls.com/poll/01EZAS745MGVNE5NZT68GDXZ8B/Diablo%202/vote)
+[![](https://api.gh-polls.com/poll/01EZAS745MGVNE5NZT68GDXZ8B/Other%2C%20let%20me%20know%20in%20Discord)](https://api.gh-polls.com/poll/01EZAS745MGVNE5NZT68GDXZ8B/Other%2C%20let%20me%20know%20in%20Discord/vote)
 
 ## Installation
 
