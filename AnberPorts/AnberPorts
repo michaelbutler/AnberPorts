@@ -2,7 +2,7 @@
 #
 # Author      : Kris Henriksen <krishenriksen.work@gmail.com>
 #
-version=1.1.0
+version=1.1.1
 
 export TERM=linux
 sudo chmod 666 /dev/tty1
@@ -69,6 +69,7 @@ GamesMenu() {
 		The-Clue "1994 video game inspired by the 1986 game They Stole a Million"
 		Spelunky "Unique platformer with randomized levels that offer a challenging new experience"
 		AM2R "Action-adventure game developed by Argentinian programmer Milton Guasti"
+		System-Shock "1994 first-person action-adventure video game"
 	)
 
     choices=$("${cmd[@]}" "${options[@]}" 2>&1 > /dev/tty1)
