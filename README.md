@@ -15,7 +15,7 @@ Collection of pre-compiled applications and games, made specifically for the Anb
 
 Where should I devote my focus, you choose my dedication. [Boost It!](https://github.com/sponsors/krishenriksen)
 
-[![](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Half-Life%3A%20Blue%20Shift)](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Half-Life%3A%20Blue%20Shift/vote) 
+[![](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/GTA3)](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/GTA3/vote)
 [![](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Spelunky)](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Spelunky/vote)
 [![](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/AM2R)](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/AM2R/vote)
 [![](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Diablo%202)](https://api.gh-polls.com/poll/01EZ88J66N0PMV02VC77PSX7TC/Diablo%202/vote)
