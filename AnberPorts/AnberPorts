@@ -87,6 +87,7 @@ ExitMenu() {
     sudo systemctl restart emulationstation
   else
     pgrep -f oga_controls | xargs kill -9
+    systemctl restart emustation
   fi
 }
 
