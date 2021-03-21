@@ -6,15 +6,12 @@
 source ./scripts/helper
 
 dialog --backtitle "System" --infobox "\nDownloading AM2R ..." 5 55 > /dev/tty1
-wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/weston.zip'
-wget -q 'https://github.com/krishenriksen/weston-rg351p/releases/download/1.0.0/am2r.zip'
+wget -q 'https://github.com/krishenriksen/AnberPorts/raw/master/misc/am2r.zip'
 
 dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
-unzip -qq -o weston.zip -d ../
 unzip -qq -o am2r.zip -d ../
 
 dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
-rm -rf weston.zip
 rm -rf am2r.zip
 
 dialog --backtitle "System" --infobox "\nEnjoy! ..." 6 55 > /dev/tty1
