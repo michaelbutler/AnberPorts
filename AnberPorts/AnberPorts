@@ -2,7 +2,7 @@
 #
 # Author      : Kris Henriksen <krishenriksen.work@gmail.com>
 #
-version=1.1.5
+version=1.1.6
 
 export TERM=linux
 
@@ -75,6 +75,7 @@ GamesMenu() {
 		AM2R "Action-adventure game developed by Argentinian programmer Milton Guasti"
 		System-Shock "1994 first-person action-adventure video game"
 		Jedi-Academy "First- and third-person shooter video game"
+		Undertale "Undertale is a 2D role-playing video game created by indie developer Toby Fox."
 	)
 
     choices=$("${cmd[@]}" "${options[@]}" 2>&1 > /dev/tty1)
