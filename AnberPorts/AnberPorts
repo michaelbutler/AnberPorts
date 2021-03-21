@@ -91,12 +91,11 @@ ExitMenu() {
   fi
 }
 
-UpdateMenu() {
-	source ./scripts/helper
+source ./scripts/helper
 
+UpdateMenu() {
 	dialog --backtitle "System" --infobox "\nDownloading latest release of AnberPorts ..." 5 55 > /dev/tty1
-	download=`wget -qO- https://api.github.com/repos/krishenriksen/AnberPorts/releases/latest | grep browser_download_url | cut -d '"' -f 4`
-	wget --quiet $download
+	wget --quiet `wget -qO- https://api.github.com/repos/krishenriksen/AnberPorts/releases/latest | grep browser_download_url | cut -d '"' -f 4`
 
 	dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
 	unzip -qq -o AnberPorts.zip -d ../
@@ -109,8 +108,6 @@ UpdateMenu() {
 
 	ExitMenu
 }
-
-source ./scripts/helper
 
 #
 # Joystick controls
