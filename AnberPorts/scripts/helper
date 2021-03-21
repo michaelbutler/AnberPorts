@@ -17,24 +17,27 @@ if [ -z "$GW" ]; then
   ExitMenu
 fi
 
-if ! dpkg -s "dialog" &> /dev/null ; then
-  install_dependencies="dialog"
-fi
+# is ArkOS ?
+if id "ark" &>/dev/null; then
+  if ! dpkg -s "dialog" &> /dev/null ; then
+    install_dependencies="dialog"
+  fi
 
-if ! dpkg -s "unzip" &> /dev/null ; then
-  install_dependencies="$install_dependencies unzip"
-fi
+  if ! dpkg -s "unzip" &> /dev/null ; then
+    install_dependencies="$install_dependencies unzip"
+  fi
 
-if ! dpkg -s "wget" &> /dev/null ; then
-  install_dependencies="$install_dependencies wget"
-fi
+  if ! dpkg -s "wget" &> /dev/null ; then
+    install_dependencies="$install_dependencies wget"
+  fi
 
-if ! dpkg -s "libevdev2" &> /dev/null ; then
-  install_dependencies="$install_dependencies libevdev2"
-fi
+  if ! dpkg -s "libevdev2" &> /dev/null ; then
+    install_dependencies="$install_dependencies libevdev2"
+  fi
 
-if [ ! -z "$install_dependencies" ]
-then
-  sudo sh -c 'echo "Installing dependencies ..." > /dev/tty1'
-  sudo apt update && sudo apt install -y $install_dependencies --no-install-recommends
+  if [ ! -z "$install_dependencies" ]
+  then
+    sudo sh -c 'echo "Installing dependencies ..." > /dev/tty1'
+    sudo apt update && sudo apt install -y $install_dependencies --no-install-recommends
+  fi
 fi
