@@ -5,7 +5,10 @@
 version=1.1.4
 
 export TERM=linux
-sudo chmod 666 /dev/tty1
+
+if id "ark" &>/dev/null; then
+  sudo chmod 666 /dev/tty1
+fi
 
 StreamingMenu() {
 	cmd=(dialog --clear --backtitle "AnberPorts" --title "[ Streaming ]" --menu "Select application from the list:" "15" "56" "15")
@@ -79,8 +82,12 @@ GamesMenu() {
 }
 
 ExitMenu() {
-	pgrep -f oga_controls | sudo xargs kill -9
-	sudo systemctl restart emulationstation
+  if id "ark" &>/dev/null; then
+    pgrep -f oga_controls | sudo xargs kill -9
+    sudo systemctl restart emulationstation
+  else
+    pgrep -f oga_controls | xargs kill -9
+  fi
 }
 
 UpdateMenu() {
@@ -106,7 +113,11 @@ source ./scripts/helper
 #
 # Joystick controls
 #
-sudo ./oga_controls &
+if id "ark" &>/dev/null; then
+  sudo ./oga_controls &
+else
+  ./oga_controls &
+fi
 
 #
 # Version management
