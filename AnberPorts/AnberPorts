@@ -95,7 +95,8 @@ UpdateMenu() {
 	source ./scripts/helper
 
 	dialog --backtitle "System" --infobox "\nDownloading latest release of AnberPorts ..." 5 55 > /dev/tty1
-	curl -s https://api.github.com/repos/krishenriksen/AnberPorts/releases/latest | grep browser_download_url | cut -d '"' -f 4 | wget -qi -
+	download=`wget -qO- https://api.github.com/repos/krishenriksen/AnberPorts/releases/latest | grep browser_download_url | cut -d '"' -f 4`
+	wget --quiet $download
 
 	dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
 	unzip -qq -o AnberPorts.zip -d ../
