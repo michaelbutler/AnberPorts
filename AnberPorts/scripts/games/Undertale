@@ -11,7 +11,7 @@ wget -q 'https://github.com/krishenriksen/AnberPorts/raw/master/misc/undertale.z
 dialog --backtitle "System" --infobox "\nExtracting ..." 5 55 > /dev/tty1
 unzip -qq -o undertale.zip -d ../
 
-dialog --backtitle "System" --infobox "\nClearning up ..." 5 55 > /dev/tty1
+dialog --backtitle "System" --infobox "\nCleaning up ..." 5 55 > /dev/tty1
 rm -rf undertale.zip
 
 dialog --backtitle "System" --infobox "\nPlease copy game files to your undertale directory! ..." 6 55 > /dev/tty1
